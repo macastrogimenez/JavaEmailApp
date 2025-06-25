@@ -23,14 +23,14 @@ public class Email {
         askForCompany(emailStoringTrie);
     }
 
-    public void askForDepartment() {
+    private void askForDepartment() {
         System.out.println("Enter your department:\n 0 for sales\n 1 for development\n 2 for accounting\n 3 for none ");
         Scanner input = new Scanner(System.in);
         int departmentInput = input.nextInt();
         setDepartment(departmentInput);
     }
 
-    public void askForCompany(TrieST<Integer> emailStoringTrie) {
+    private void askForCompany(TrieST<Integer> emailStoringTrie) {
         System.out.println("Enter your Company");
         Scanner input = new Scanner(System.in);
         String companyInput = input.nextLine();
@@ -78,7 +78,7 @@ public class Email {
         return this.email;
     }
 
-    public boolean validateEmail(String alternateEmail) {
+    private boolean validateEmail(String alternateEmail) {
         Pattern pattern = Pattern.compile("[a-zA-Z_0-9]{5,20}\\@[a-zA-Z_0-9]{2,20}\\.[a-zA-Z]{2,3}",
                 Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(alternateEmail);
